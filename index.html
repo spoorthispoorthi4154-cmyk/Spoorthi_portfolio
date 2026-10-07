@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Spoorthi S - Electronics and Communication Engineering Student specializing in IoT, ESP32 Microcontroller, C, and Python.">
+  <title>Spoorthi S | Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --border-color: #e2e8f0;
+      --tag-bg: #e0e7ff;
+      --tag-text: #3730a3;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --transition: all 0.3s ease;
+      --name-gradient: linear-gradient(135deg, #e11d48, #9333ea);
+      --name-color: #e11d48;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-hover: #0ea5e9;
+      --border-color: #334155;
+      --tag-bg: #1e3a5f;
+      --tag-text: #93c5fd;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+      --name-gradient: linear-gradient(135deg, #fb7185, #c084fc);
+      --name-color: #fb7185;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      transition: var(--transition);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* HEADER & NAVIGATION */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo a {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--name-color);
+      background: var(--name-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.25rem;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* THEME TOGGLE BUTTON */
+    .theme-toggle-container button {
+      background: var(--bg-color);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.45rem 0.85rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: var(--transition);
+    }
+
+    .theme-toggle-container button:hover {
+      border-color: var(--primary);
+    }
+
+    /* MAIN CONTAINER */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    section h2 {
+      font-size: 1.85rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+      color: var(--text-main);
+    }
+
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 45px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    /* HERO SECTION */
+    #hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      padding: 2rem 0;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title .highlight {
+      color: var(--name-color);
+      background: var(--name-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-description {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+      max-width: 580px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-align: center;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text-main);
+      border-color: var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .hero-image-container {
+      flex-shrink: 0;
+    }
+
+    .hero-image {
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--primary);
+      box-shadow: var(--shadow);
+    }
+
+    /* ABOUT SECTION */
+    .about-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .about-card p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* SKILLS SECTION */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-category {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .skill-category h3 {
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .skill-tags li {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 0.5rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .skill-tags li:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      border-color: var(--primary);
+    }
+
+    .skill-icon {
+      font-size: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .skill-icon svg {
+      width: 1.15rem;
+      height: 1.15rem;
+      vertical-align: middle;
+    }
+
+    /* TIMELINE & EDUCATION SECTION */
+    .timeline-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .timeline-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--primary);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-item h3 {
+      font-size: 1.2rem;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-meta {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .badge-grade {
+      background: #ecfdf5;
+      color: #065f46;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    [data-theme="dark"] .badge-grade {
+      background: #064e3b;
+      color: #a7f3d0;
+    }
+
+    .timeline-item p {
+      color: var(--text-muted);
+    }
+
+    /* PROJECTS SECTION */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-thumbnail-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 1.25rem;
+      cursor: zoom-in;
+    }
+
+    .project-thumbnail {
+      width: 100%;
+      max-height: 460px;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      transition: transform 0.3s ease;
+    }
+
+    .project-thumbnail-wrapper:hover .project-thumbnail {
+      transform: scale(1.02);
+    }
+
+    .expand-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(15, 23, 42, 0.8);
+      color: #ffffff;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+      pointer-events: none;
+      font-weight: 500;
+    }
+
+    /* LIGHTBOX MODAL FOR BIG SCREEN VIEW */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.92);
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      cursor: zoom-out;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 95vw;
+      max-height: 90vh;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      color: #ffffff;
+      font-size: 2rem;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .project-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .project-duration {
+      font-size: 0.85rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-card ul.project-details {
+      color: var(--text-muted);
+      margin-left: 1.25rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    .project-card ul.project-details li {
+      margin-bottom: 0.4rem;
+    }
+
+    .tech-stack-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+      margin-bottom: 1.25rem;
+    }
+
+    .tech-stack-list li {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    /* CONTACT SECTION */
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .contact-info-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .contact-info-list li {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-info-list span.label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .contact-info-list a, .contact-info-list span.val {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .contact-info-list a:hover {
+      color: var(--primary);
+    }
+
+    form.contact-form {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .form-group input, .form-group textarea {
+      padding: 0.65rem;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: var(--card-bg);
+      border-top: 1px solid var(--border-color);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .footer-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .social-links {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    .social-links a {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .social-links a:hover {
+      color: var(--primary);
+    }
+
+    footer p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* ============================================
+       SLIDESHOW STYLES
+    ============================================ */
+    .slideshow-wrapper {
+      position: relative;
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      background: #0f172a;
+      box-shadow: 0 8px 32px rgba(37,99,235,0.18);
+      cursor: pointer;
+    }
+
+    .slideshow-track {
+      display: flex;
+      transition: transform 0.7s cubic-bezier(0.77,0,0.175,1);
+      will-change: transform;
+    }
+
+    .slide {
+      min-width: 100%;
+      position: relative;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+      border-radius: 0;
+      animation: subtleZoom 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes subtleZoom {
+      from { transform: scale(1); }
+      to   { transform: scale(1.04); }
+    }
+
+    .slide-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0; right: 0;
+      padding: 1rem 1.25rem 0.85rem;
+      background: linear-gradient(to top, rgba(10,15,40,0.92) 0%, transparent 100%);
+      color: #e0eaff;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .slideshow-controls {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+
+    .slide-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+      border: 1.5px solid rgba(255,255,255,0.55);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .slide-dot.active {
+      background: var(--primary);
+      transform: scale(1.25);
+      border-color: var(--primary);
+    }
+
+    .slide-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(15,23,42,0.65);
+      color: #fff;
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: background 0.2s;
+      backdrop-filter: blur(4px);
+    }
+
+    .slide-arrow:hover { background: var(--primary); }
+    .slide-arrow.prev { left: 10px; }
+    .slide-arrow.next { right: 10px; }
+
+    /* SLIDE-IN ANIMATION for project card */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .project-card {
+      animation: fadeSlideUp 0.7s ease both;
+    }
+
+    /* ============================================
+       HERO BACKGROUND
+    ============================================ */
+    #hero {
+      background: radial-gradient(ellipse at 70% 50%, rgba(37,99,235,0.07) 0%, transparent 70%),
+                  radial-gradient(ellipse at 20% 80%, rgba(147,51,234,0.06) 0%, transparent 60%);
+      border-radius: 16px;
+    }
+
+    /* ============================================
+       RESPONSIVE DESIGN — DESKTOP (>1024px)
+    ============================================ */
+    @media (min-width: 1024px) {
+      nav {
+        padding: 1rem 2rem;
+      }
+
+      main {
+        padding: 3rem 2rem;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+      }
+
+      .hero-image {
+        width: 270px;
+        height: 270px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      }
+
+      .slide img {
+        height: 420px;
+      }
+    }
+
+    /* ============================================
+       RESPONSIVE DESIGN — TABLET (768px – 1023px)
+    ============================================ */
+    @media (max-width: 1023px) and (min-width: 601px) {
+      nav {
+        padding: 0.85rem 1.25rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .nav-links {
+        gap: 0.85rem;
+        font-size: 0.88rem;
+      }
+
+      main {
+        padding: 2rem 1.25rem;
+      }
+
+      #hero {
+        gap: 2rem;
+        padding: 1.5rem 0;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .hero-image {
+        width: 200px;
+        height: 200px;
+      }
+
+      section h2 {
+        font-size: 1.6rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+
+      .slide img {
+        height: 300px;
+      }
+    }
+
+    /* ============================================
+       RESPONSIVE DESIGN — MOBILE (<= 600px)
+    ============================================ */
+    @media (max-width: 600px) {
+      /* NAV: hamburger style */
+      nav {
+        padding: 0.85rem 1rem;
+        position: relative;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        background: var(--card-bg);
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem 1.25rem;
+        gap: 0.75rem;
+        z-index: 200;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 4px;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--text-main);
+        border-radius: 2px;
+        transition: var(--transition);
+      }
+
+      /* HERO */
+      #hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 1.25rem;
+        padding: 1.25rem 0;
+      }
+
+      .hero-title {
+        font-size: 1.65rem;
+        line-height: 1.25;
+      }
+
+      .hero-subtitle {
+        font-size: 0.92rem;
+      }
+
+      .hero-description {
+        font-size: 0.95rem;
+        margin: 0 auto 1.25rem;
+      }
+
+      .hero-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+      }
+
+      .btn {
+        padding: 0.55rem 1.1rem;
+        font-size: 0.88rem;
+      }
+
+      .hero-image {
+        width: 160px;
+        height: 160px;
+      }
+
+      /* MAIN */
+      main {
+        padding: 1.5rem 1rem;
+      }
+
+      section {
+        margin-bottom: 2.75rem;
+      }
+
+      section h2 {
+        font-size: 1.4rem;
+      }
+
+      /* SKILLS */
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .skill-tags {
+        gap: 0.4rem;
+      }
+
+      .skill-tags li {
+        font-size: 0.82rem;
+        padding: 0.4rem 0.65rem;
+      }
+
+      /* TIMELINE */
+      .timeline-item {
+        padding: 1.1rem;
+      }
+
+      .timeline-meta {
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+
+      /* PROJECTS */
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .slide img {
+        height: 210px;
+      }
+
+      .project-card {
+        padding: 1.25rem;
+      }
+
+      .project-card h3 {
+        font-size: 1.05rem;
+      }
+
+      .tech-stack-list {
+        gap: 0.4rem;
+      }
+
+      .tech-stack-list li {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.5rem;
+      }
+
+      /* CONTACT */
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      /* FOOTER */
+      .social-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      /* LIGHTBOX */
+      .lightbox-close {
+        top: 12px;
+        right: 12px;
+        width: 38px;
+        height: 38px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================= -->
+  <!-- HEADER & NAVIGATION -->
+  <!-- ========================================================= -->
+  <header>
+    <nav aria-label="Main Navigation">
+      <div class="logo">
+        <a href="#hero">Spoorthi S</a>
+      </div>
+
+      <!-- Hamburger for mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" class="nav-close">Home</a></li>
+        <li><a href="#about" class="nav-close">About Spoorthi</a></li>
+        <li><a href="#skills" class="nav-close">Skills</a></li>
+        <li><a href="#timeline" class="nav-close">Education &amp; Timeline</a></li>
+        <li><a href="#projects" class="nav-close">Projects</a></li>
+        <li><a href="#contact" class="nav-close">Contact</a></li>
+      </ul>
+
+      <div class="theme-toggle-container">
+        <button id="theme-toggle" type="button" aria-label="Toggle dark/light mode">
+          <span id="theme-icon">🌙</span>
+          <span id="theme-text">Night Mode</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========================================================= -->
+  <!-- MAIN CONTENT AREA -->
+  <!-- ========================================================= -->
+  <main>
+
+    <!-- ======================================================= -->
+    <!-- HERO SECTION PLACEHOLDER -->
+    <!-- ======================================================= -->
+    <!-- 
+      SECTION: Hero
+      - Details populated from Resume: Spoorthi S
+      - Specialization: Electronics and Communication Engineering & IoT development
+    -->
+    <section id="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <h1 id="hero-title" class="hero-title">Hello, I'm <span class="highlight">Spoorthi S</span></h1>
+        <p class="hero-subtitle">Electronics &amp; Communication Engineering Student | IoT, ESP32 &amp; Embedded Systems</p>
+        <p class="hero-description">
+          Aspiring engineer passionate about IoT systems, sensor-based technologies, and programming with the <strong>ESP32 microcontroller</strong>, C, and Python to build impactful, real-world solutions.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="Resume (1).pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Resume</a>
+          <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-image-container">
+        <!-- Profile photo from workspace -->
+        <img src="WhatsApp Image 2026-10-07 at 09.42.07.jpeg" alt="Spoorthi S" class="hero-image">
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- ABOUT SECTION PLACEHOLDER -->
+    <!-- ======================================================= -->
+    <!-- 
+      SECTION: About
+      - Academic background, engineering focus, and achievements
+    -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About Spoorthi</h2>
+      <div class="about-card">
+        <p>
+          I am an engineering student pursuing my <strong>Bachelor of Engineering (B.E.)</strong> in 
+          <strong>Electronics and Communication Engineering</strong> at 
+          <strong>Adichunchanagiri Institute of Technology, Chikmagalur</strong>.
+        </p>
+        <p>
+          With a strong foundation in C and Python programming, I focus on bridging the gap between embedded hardware 
+          and software systems. I have developed practical hands-on experience through projects like an 
+          IoT-based continuous epilepsy monitoring system powered by the <strong>ESP32 microcontroller</strong> and specialized sensors.
+        </p>
+        <p>
+          I am eager to learn, adapt, and contribute to cutting-edge projects in software engineering, embedded systems, and IoT.
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SKILLS SECTION PLACEHOLDER -->
+    <!-- ======================================================= -->
+    <!-- 
+      SECTION: Skills
+      - Extracted from Resume: Programming (C, Python), Core, Frontend, Backend placeholders
+    -->
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Programming Languages</h3>
+          <ul class="skill-tags">
+            <li><i class="devicon-c-plain colored skill-icon"></i> C Language</li>
+            <li><i class="devicon-python-plain colored skill-icon"></i> Python</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Core &amp; Domain</h3>
+          <ul class="skill-tags">
+            <li><span class="skill-icon">📟</span> ESP32 Microcontroller</li>
+            <li><span class="skill-icon">🌐</span> IoT (Internet of Things)</li>
+            <li><span class="skill-icon">📡</span> Sensor-based Systems</li>
+            <li><i class="devicon-embeddedc-plain colored skill-icon"></i> Embedded Systems</li>
+            <li><span class="skill-icon">⚡</span> Electronics &amp; Communication</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Web &amp; Development Tools</h3>
+          <ul class="skill-tags">
+            <li><i class="devicon-html5-plain colored skill-icon"></i> HTML5</li>
+            <li><i class="devicon-css3-plain colored skill-icon"></i> CSS3</li>
+            <li><i class="devicon-git-plain colored skill-icon"></i> Git</li>
+            <li><i class="devicon-github-original skill-icon"></i> GitHub</li>
+            <li><span class="skill-icon">🧩</span> Problem Solving</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- TIMELINE / EDUCATION SECTION PLACEHOLDER -->
+    <!-- ======================================================= -->
+    <!-- 
+      SECTION: Timeline (Education & Achievements)
+      - Extracted from Resume: B.E. at AIT Chikmagalur & Academic Achievements
+    -->
+    <section id="timeline" aria-labelledby="timeline-title">
+      <h2 id="timeline-title">Education &amp; Achievements</h2>
+      <div class="timeline-container">
+        
+        <!-- Education Entry -->
+        <article class="timeline-item">
+          <h3>Bachelor of Engineering (B.E.) &mdash; Electronics &amp; Communication Engineering</h3>
+          <div class="timeline-meta">
+            <span>Adichunchanagiri Institute of Technology, Chikmagalur</span>
+            <time datetime="2025/2029">2025 &ndash; 2029</time>
+            <span class="badge-grade">CGPA: 8.2</span>
+          </div>
+          <p>
+            Pursuing comprehensive engineering studies covering core electronics, communication networks, 
+            microcontrollers, and computer programming.
+          </p>
+        </article>
+
+        <!-- Academic Achievement Entry -->
+        <article class="timeline-item">
+          <h3>Academic Merit &amp; Achievement</h3>
+          <div class="timeline-meta">
+            <span>Academic Performance</span>
+            <span class="badge-grade">Secured 80%</span>
+          </div>
+          <p>
+            Demonstrated continuous academic diligence and distinction in coursework and assessments.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- PROJECTS SECTION PLACEHOLDER -->
+    <!-- ======================================================= -->
+    <!-- 
+      SECTION: Projects
+      - Extracted from Resume: IoT Based Epilepsy Monitoring System
+    -->
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Featured Projects</h2>
+      <div class="projects-grid">
+        
+        <!-- IoT Based Epilepsy Monitoring System -->
+        <article class="project-card">
+          <div>
+            <!-- Animated 3D Image Slideshow -->
+            <div class="slideshow-wrapper" id="iot-slideshow">
+              <div class="slideshow-track" id="iot-track">
+                <div class="slide">
+                  <img src="C:/Users/HP/.gemini/antigravity/brain/203c44ab-63ed-4134-a9f3-c5141ff20e02/iot_3d_esp32_1791356337089.jpg"
+                       alt="3D ESP32 IoT System – Hardware Overview">
+                  <div class="slide-caption">📟 ESP32 Microcontroller &amp; Sensor Network</div>
+                </div>
+                <div class="slide">
+                  <img src="C:/Users/HP/.gemini/antigravity/brain/203c44ab-63ed-4134-a9f3-c5141ff20e02/iot_3d_dashboard_1791356360705.jpg"
+                       alt="3D Real-Time IoT Health Monitoring Dashboard">
+                  <div class="slide-caption">📊 Real-Time Seizure Detection Dashboard</div>
+                </div>
+                <div class="slide">
+                  <img src="C:/Users/HP/.gemini/antigravity/brain/203c44ab-63ed-4134-a9f3-c5141ff20e02/iot_epilepsy_project_1791350979953.jpg"
+                       alt="IoT Based Epilepsy Monitoring Prototype Lab">
+                  <div class="slide-caption">🔬 Lab Prototype – Sensor Interfacing &amp; Testing</div>
+                </div>
+              </div>
+              <!-- Arrows -->
+              <button class="slide-arrow prev" onclick="iotSlide(-1)" aria-label="Previous slide">&#8592;</button>
+              <button class="slide-arrow next" onclick="iotSlide(1)" aria-label="Next slide">&#8594;</button>
+              <!-- Dots -->
+              <div class="slideshow-controls" id="iot-dots">
+                <span class="slide-dot active" onclick="goToSlide(0)"></span>
+                <span class="slide-dot" onclick="goToSlide(1)"></span>
+                <span class="slide-dot" onclick="goToSlide(2)"></span>
+              </div>
+            </div>
+
+            <h3>IoT Based Epilepsy Monitoring System (ESP32)</h3>
+            <p class="project-duration">Duration: 6 Months</p>
+            <ul class="project-details">
+              <li>Developed an IoT-based epilepsy monitoring system powered by the <strong>ESP32 microcontroller</strong> and sensor-based technology for patient safety.</li>
+              <li>Interfaced biomedical and accelerometer sensors with the ESP32 for real-time biometric acquisition and low-latency processing.</li>
+              <li>Applied C and Python programming concepts for embedded ESP32 firmware, continuous telemetry, and cloud dashboard monitoring.</li>
+              <li>Engineered the system to support continuous, real-time tracking and timely alerts for abnormal seizure conditions.</li>
+            </ul>
+          </div>
+
+          <div>
+            <ul class="tech-stack-list">
+              <li>📟 ESP32 Microcontroller</li>
+              <li><i class="devicon-c-plain colored"></i> C</li>
+              <li><i class="devicon-python-plain colored"></i> Python</li>
+              <li>🌐 IoT</li>
+              <li>📡 Sensors</li>
+              <li>⚡ Embedded Systems</li>
+            </ul>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener noreferrer">Source Code &rarr;</a>
+              <a href="#" target="_blank" rel="noopener noreferrer">Demo / Details &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- CONTACT SECTION PLACEHOLDER -->
+    <!-- ======================================================= -->
+    <!-- 
+      SECTION: Contact
+      - Extracted from Resume: Phone (7795303835) & Email (spoorthispoorthi4154@gmail.com)
+    -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Get In Touch</h2>
+      <div class="contact-container">
+        
+        <!-- Direct Contact Information -->
+        <div class="contact-info-card">
+          <h3>Contact Details</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem;">
+            Feel free to reach out for opportunities, collaborations, or inquiries!
+          </p>
+          <ul class="contact-info-list">
+            <li>
+              <span class="label">Email</span>
+              <a href="mailto:spoorthispoorthi4154@gmail.com">spoorthispoorthi4154@gmail.com</a>
+            </li>
+            <li>
+              <span class="label">Phone</span>
+              <a href="tel:7795303835">+91 7795303835</a>
+            </li>
+            <li>
+              <span class="label">Location</span>
+              <span class="val">Chikmagalur, Karnataka, India</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Interactive Contact Form -->
+        <form class="contact-form" action="#" method="post">
+          <div class="form-group">
+            <label for="contact-name">Your Name</label>
+            <input type="text" id="contact-name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Your Email</label>
+            <input type="email" id="contact-email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- FOOTER -->
+  <!-- ========================================================= -->
+  <footer>
+    <div class="footer-content">
+      <ul class="social-links">
+        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="mailto:spoorthispoorthi4154@gmail.com">Email</a></li>
+      </ul>
+      <p>&copy; 2026 Spoorthi S. All rights reserved.</p>
+      <a href="#hero">Back to top &uarr;</a>
+    </div>
+  </footer>
+
+  <!-- ========================================================= -->
+  <!-- LIGHTBOX MODAL: FULL SCREEN IMAGE PREVIEW -->
+  <!-- ========================================================= -->
+  <div id="image-lightbox" class="lightbox-modal" onclick="closeLightbox()">
+    <button class="lightbox-close" type="button" onclick="closeLightbox()" aria-label="Close full screen image">&times;</button>
+    <img id="lightbox-target" class="lightbox-img" src="" alt="Full Screen Project Preview" onclick="event.stopPropagation()">
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- JAVASCRIPT: NIGHT / DARK MODE & LIGHTBOX LOGIC -->
+  <!-- ========================================================= -->
+  <script>
+    // Lightbox functions for big screen view
+    function openLightbox(src) {
+      const modal = document.getElementById('image-lightbox');
+      const target = document.getElementById('lightbox-target');
+      target.src = src;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('image-lightbox');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // ============================================
+    // SLIDESHOW — IoT Project Images (auto-play, one-by-one)
+    // ============================================
+    let currentSlide = 0;
+    const totalSlides = 3;
+    const track = document.getElementById('iot-track');
+    const dots = document.querySelectorAll('#iot-dots .slide-dot');
+    let autoPlayTimer;
+
+    function updateSlideshow() {
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+    }
+
+    function iotSlide(dir) {
+      currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
+      updateSlideshow();
+      resetAutoPlay();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateSlideshow();
+      resetAutoPlay();
+    }
+
+    function startAutoPlay() {
+      autoPlayTimer = setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlideshow();
+      }, 3500);
+    }
+
+    function resetAutoPlay() {
+      clearInterval(autoPlayTimer);
+      startAutoPlay();
+    }
+
+    startAutoPlay();
+
+    // ============================================
+    // HAMBURGER MENU TOGGLE
+    // ============================================
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close nav when a link is clicked (mobile)
+    document.querySelectorAll('.nav-close').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Theme toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const themeText = document.getElementById('theme-text');
+
+    // Retrieve saved theme or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeIcon.textContent = '☀️';
+      themeText.textContent = 'Light Mode';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      themeIcon.textContent = '🌙';
+      themeText.textContent = 'Night Mode';
+    }
+
+    // Toggle event listener
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+
+      if (newTheme === 'dark') {
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'Light Mode';
+      } else {
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'Night Mode';
+      }
+    });
+  </script>
+</body>
+</html>
